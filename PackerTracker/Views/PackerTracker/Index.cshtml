@@ -1,0 +1,50 @@
+@using PackerTracker.Models;
+
+<h1>Packer Tracker</h1>
+<ul>
+
+@if (Model.Count == 0)
+{
+  <p>You have no packertracker in your journal!</p>
+}
+@if(Model.Count != 0)
+{
+  <h2>All items:</h2>
+  @foreach (Tracker item in Model)
+  {
+    <li>
+      <a href='/packertracker/@item.GetId()'>@item.GetItemName()</a>
+    </li>
+  }
+}
+</ul>
+
+@if(Model.Count != 0)
+{
+<h2>Not yet packed:</h2>
+
+<ul>
+@{bool isPacked = false;}
+  @foreach (Tracker item in Model)
+  {
+    @if(item.GetPacked() == false)
+    {
+      <li>
+        <a href='/packertracker/@item.GetId()'>@item.GetItemName()</a>
+      </li>
+    }
+    @if(item.GetPacked() == true)
+    {
+      isPacked = true;
+    }
+  }
+  @if(isPacked)
+  {
+  <h2>All packed!</h2>
+  }
+</ul>
+}
+
+
+
+<a href='/packertracker/new'>Add a new item<a/>

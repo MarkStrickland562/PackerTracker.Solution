@@ -1,0 +1,20 @@
+@using PackerTracker.Models;
+
+<h2>@Model.GetItemName()</h2>
+
+<ul>
+<li>Price : @Model.GetPrice() </li>
+<li>Weight : @Model.GetWeight() </li>
+<li>Manufacturer : @Model.GetManufacturer() </li>
+<li>Purchased? : @Model.GetPurchased() </li>
+<li>Packed? : @Model.GetPacked() </li>
+</ul>
+
+<form action="/packertracker/@Model.GetId()" method="post">
+<label for="myPacked">Is it packed now? [true/false]: </label>
+<input id="myPacked" name="myPacked" type="bool">
+<br>
+<button type="submit">Submit</button>
+</form>
+
+<a href='/packertracker/new'>Add a new item<a/>

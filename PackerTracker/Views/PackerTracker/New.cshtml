@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <title>Hello packer!</title>
+  </head>
+  <body>
+    <h1>To Do List</h1>
+    <form action="/packertracker" method="post">
+      <label for="myItemName">Item: </label>
+      <input id="myItemName" name="myItemName" type="text">
+      <br>
+      <label for="myPrice">Price: </label>
+      <input id="myPrice" name="myPrice" type="number">
+      <br>
+      <label for="myWeigth">Weight: </label>
+      <input id="myWeigth" name="myWeigth" type="number">
+      <br>
+      <label for="myManufacturer">Manufacturer: </label>
+      <input id="myManufacturer" name="myManufacturer" type="text">
+      <br>
+      <label for="myPurchased">Is it purchased [true/false]?: </label>
+      <input id="myPurchased" name="myPurchased" type="bool">
+      <br>
+      <label for="myPacked">Is it packed [true/false]: </label>
+      <input id="myPacked" name="myPacked" type="bool">
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>
